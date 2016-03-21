@@ -7,7 +7,7 @@ require 'uri'
 require 'json'
 require 'time'
 
-class Slack
+module Slack
   class << self
     def post_reservations
       reservations = parse_json
