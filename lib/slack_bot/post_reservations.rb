@@ -7,8 +7,8 @@ require 'uri'
 require 'json'
 require 'time'
 
-module Slack
-  class << self
+module SlackBot
+  module PostReservations
     def post_reservations
       reservations = parse_json
       return if reservations.empty?
@@ -23,7 +23,6 @@ module Slack
 #{url}
       EOS
     end
-
 
     private
     def get_json
@@ -49,5 +48,3 @@ module Slack
     end
   end
 end
-
-Slack.post_reservations
