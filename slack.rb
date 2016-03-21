@@ -9,7 +9,7 @@ require 'time'
 
 class Slack
   class << self
-    def tweet_resevations
+    def post_reservations
       reservations = parse_json
       return if reservations.empty?
 
@@ -50,4 +50,4 @@ class Slack
   end
 end
 
-Slack.tweet_resevations
+Slack.post_reservations
