@@ -44,10 +44,8 @@ class Slack
     end
 
     def post(text)
-      data = { "text" => text }
-      request_url = ROOM_URL
-      uri = URI.parse(request_url)
-      Net::HTTP.post_form(uri, { "payload" => data.to_json })
+      Net::HTTP.post_form(URI.parse(ROOM_URL),
+                          { "payload" => { "text" => text }.to_json })
     end
   end
 end
